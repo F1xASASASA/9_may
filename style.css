@@ -1,0 +1,798 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    --color-primary: #F34604; /* Основной оранжевый МИДИС */
+    --color-primary-dark: #F34604;
+    --color-text: #212529;
+    --color-text-muted: #6C757D;
+    --color-background: #FFFFFF;
+    --color-background-alt: #F8F9FA;
+    --color-border: #dee2e6;
+    --color-overlay: rgba(0, 0, 0, 0.4); /* Для оверлеев на изображениях */
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    --transition-speed: 0.3s;
+}
+
+/* Базовые настройки */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Предотвращение горизонтальной прокрутки */
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+/* Шапка */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Разносит логотипы по краям */
+    align-items: center;
+}
+
+.logo {
+    height: 60px; /* Ваш размер */
+    transition: transform var(--transition-speed) ease;
+    display: block; /* Полезно для img в flex */
+}
+.logo-link:hover .logo {
+    transform: scale(1.05);
+}
+/* Стили для правого лого, если нужны специфичные */
+.header-logo-right {
+    height: 80px;
+     /* Можно добавить стили, если нужно, например, отступ */
+     /* margin-left: 20px; */
+}
+
+/* Удалены стили для .header-logos-wrapper, .header-separator, .project-info, .details-nav */
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-background);
+    padding: 80px 0 40px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Убраны фиксированные размеры, background-size: cover лучше для адаптивности */
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/123.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+    position: relative;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--color-background);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Стиль для символа в hero (замените .hero-banner-image, если он был) */
+.hero-symbol-image {
+     max-width: 150px; /* Настройте размер */
+     margin: 30px auto 40px;
+}
+
+.scroll-down-link {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-background);
+    opacity: 0.8;
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    animation: bounce 2s infinite;
+}
+.scroll-down-link svg {
+    width: 30px;
+    height: 30px;
+}
+.scroll-down-link:hover {
+    opacity: 1;
+    transform: translateX(-50%) translateY(3px);
+    color: var(--color-background);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+  40% {transform: translateX(-50%) translateY(-8px);}
+  60% {transform: translateX(-50%) translateY(-4px);}
+}
+
+
+/* Intro Text Section */
+.intro-section {
+    padding: 80px 20px;
+    background-color: var(--color-background-alt);
+}
+
+.intro-text-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+.section-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+.intro-text-wrapper p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+/* Heroes Section */
+.monuments-section {
+    padding: 80px 0;
+    background-color: var(--color-background);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.section-title span {
+    color: var(--color-primary);
+    display: block;
+    font-size: 0.7em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Стили для Поиска --- */
+.search-wrapper {
+    position: relative; /* Для позиционирования иконки */
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px; /* Добавляем padding к wrapper */
+    /* max-width: 500px; Убрали отсюда, чтобы не ограничивать wrapper */
+    /* margin-left: auto; Убрали */
+    /* margin-right: auto; Убрали */
+}
+
+.search-input {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    padding: 12px 45px 12px 20px; /* top right bottom left (отступ для иконки справа) */
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    width: 100%;
+    max-width: 500px; /* Ограничиваем ширину самого инпута */
+    box-shadow: var(--shadow-sm);
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(232, 122, 48, 0.25);
+}
+
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    /* Позиционируем относительно ПРАВОГО КРАЯ инпута, а не wrapper'а */
+    /* Вычисляем: (ширина wrapper'а - макс ширина инпута) / 2 + отступ от края инпута */
+    /* Проще спозиционировать относительно правого края wrapper'а и учесть padding */
+    right: 35px; /* Отступ от правого края wrapper'а (с учетом padding: 20px) */
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-primary);
+    pointer-events: none;
+}
+/* Корректировка для search-icon, если max-width инпута активен */
+@media (min-width: 540px) { /* 500px инпут + 2*20px padding wrapper'а */
+     .search-icon {
+        /* Когда инпут достиг макс. ширины, позиционируем относительно него */
+         right: calc(50% - 500px / 2 + 45px - 20px - 5px); /* Центр - половина инпута + паддинг - иконка - отступ*/
+         /* Альтернатива: Позиционировать относительно левого края */
+         /* left: calc(50% + 500px / 2 - 45px); */
+         /* Самый простой вариант: оставить right: 35px; если центрирование инпута не критично */
+         /* Оставляем right: 35px для простоты, т.к. инпут центрирован через wrapper */
+     }
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.card-searched-out {
+    display: none !important;
+}
+/* --- Конец стилей для поиска --- */
+
+
+.monuments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 40px;
+}
+
+/* Карточка героя */
+.monument-card {
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+}
+
+.monument-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-link {
+    display: block;
+    color: inherit;
+}
+.card-link:hover {
+    color: inherit;
+}
+
+
+.card-image-container {
+    height: 500px; /* ИЗМЕНЕНО: Увеличено с 250px */
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+.monument-card:hover .card-image-container img {
+     transform: scale(1.1);
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+}
+.monument-card:hover .card-image-overlay {
+    opacity: 1;
+}
+
+.placeholder-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+}
+.placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+    font-family: sans-serif; /* Чтобы эмодзи отображался */
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.8em;
+}
+
+.card-cta {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 10px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.monument-card:hover .card-cta {
+    transform: translateX(5px);
+    color: var(--color-primary-dark);
+}
+
+/* Стили для скрытых карточек */
+.monument-card.hidden-card {
+    display: none;
+}
+
+/* Стили для кнопки "Показать еще" */
+.show-more-button {
+    display: block;
+    margin: 50px auto 30px;
+    padding: 12px 30px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-background);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.show-more-button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.show-more-button:active {
+     transform: translateY(0);
+     box-shadow: none;
+}
+
+.show-more-button.hidden {
+    display: none;
+}
+
+
+/* Стили для страницы деталей */
+.details-page-main {
+    padding-top: 40px;
+}
+/* Стили для .details-nav удалены, так как элемент удален из HTML */
+
+.back-link { /* Если ссылка "назад" будет добавлена в другом месте */
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+    display: inline-block; /* Пример */
+    margin-bottom: 0px;   /* Пример */
+}
+.back-link:hover {
+    color: var(--color-primary);
+}
+
+.details-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.details-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
+}
+.details-subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.details-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+    .details-content {
+        grid-template-columns: 1fr 1.2fr;
+         gap: 60px;
+    }
+    .details-image-wrapper {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+.details-image {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.details-text-wrapper h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: var(--color-primary);
+     position: relative;
+     padding-bottom: 10px;
+}
+.details-text-wrapper h2::after {
+     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-primary);
+    opacity: 0.6;
+}
+.details-text-wrapper h2:first-of-type {
+    margin-top: 0;
+}
+
+.details-text-wrapper p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #495057;
+}
+
+.details-quote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 20px;
+    margin: 40px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+
+/* Подвал */
+.site-footer {
+    background-color: var(--color-text);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.footer-logo .logo { /* Применяем стиль высоты и к лого в футере */
+    height: 40px; /* Уменьшаем для футера */
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+.footer-logo span {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.footer-credits {
+    text-align: right;
+    font-size: 0.85rem;
+}
+.footer-credits p {
+    margin-bottom: 5px;
+}
+.footer-credits p:last-child {
+    margin-bottom: 0;
+    opacity: 0.6;
+}
+
+/* --- Анимации --- */
+.animate-on-scroll {
+    opacity: 0;
+    --animation-duration: 0.6s;
+    --animation-transform-y: 30px;
+    transition: opacity var(--animation-duration) ease-out, transform var(--animation-duration) ease-out;
+    transition-delay: calc(var(--stagger-index, 0) * 0.1s);
+}
+.animate-on-scroll.fast-reveal {
+    --animation-duration: 0.4s;
+    transition-delay: 0s !important;
+}
+.animate-on-scroll.fade-in-up {
+    transform: translateY(var(--animation-transform-y));
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.animate-on-load {
+    opacity: 0;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.animate-on-load.fade-in { animation-name: fadeIn; }
+.animate-on-load.fade-in-up { animation-name: fadeInUp; }
+.animate-on-load.delay-1 { animation-delay: 0.2s; }
+.animate-on-load.delay-2 { animation-delay: 0.4s; }
+.animate-on-load.delay-3 { animation-delay: 0.6s; }
+.animate-on-load.delay-4 { animation-delay: 0.8s; }
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Ставим логотипы друг под другом на мобильных */
+        gap: 15px;
+    }
+    /* .project-info { text-align: center;} Удалено */
+    /* .details-nav { margin-left: 0; margin-top: 10px; } Удалено */
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-logo { flex-direction: column; }
+    .footer-credits { text-align: center; }
+
+    .section-title span { display: inline; font-size: 1em;}
+
+    /* Позиционирование иконки поиска на мобильных */
+    .search-icon {
+        right: 30px; /* Ближе к краю на узких экранах */
+    }
+}
+
+/* Кейфреймы для анимаций при загрузке */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Удалены дублирующиеся и ненужные стили для фильтров */
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Ставим логотипы друг под другом на мобильных */
+        gap: 15px; /* Расстояние между логотипами (вертикальное) */
+    }
+
+    /* !!! НОВОЕ ПРАВИЛО !!! */
+    /* Добавляем нижнюю границу к ПЕРВОМУ элементу (ссылке с лого) в шапке */
+    .header-container > .logo-link:first-child { /* :first-child выберет именно первый логотип */
+        padding-bottom: 15px; /* Отступ ПОД первым лого ДО линии (равен gap для симметрии) */
+        border-bottom: 4px solid #F34604; /* Толщина, стиль и ВАШ ЦВЕТ линии */
+        width: auto; /* Чтобы граница не растягивалась на всю ширину, а была под лого */
+        display: inline-block; /* Необходимо для корректной работы padding/border */
+    }
+    /* !!! КОНЕЦ НОВОГО ПРАВИЛА !!! */
+
+
+    /* .project-info { text-align: center;} Удалено */
+    /* .details-nav { margin-left: 0; margin-top: 10px; } Удалено */
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-logo { flex-direction: column; }
+    .footer-credits { text-align: center; }
+
+    .section-title span { display: inline; font-size: 1em;}
+
+    /* Позиционирование иконки поиска на мобильных */
+    .search-icon {
+        right: 30px; /* Ближе к краю на узких экранах */
+    }
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+    /* !!! НОВОЕ ПРАВИЛО !!! */
+    .site-header {
+        position: static; /* Отменяем "прилипание" шапки на мобильных */
+        /* Сбрасываем стили, которые нужны только для sticky, если необходимо */
+        /* top: auto; */
+        /* z-index: auto; */
+        /* backdrop-filter: none; */ /* Если не нужен блюр */
+        /* box-shadow: none; */    /* Если не нужна тень */
+    }
+    /* !!! КОНЕЦ НОВОГО ПРАВИЛА !!! */
+
+    .header-container {
+        flex-direction: column; /* Ставим логотипы друг под другом на мобильных */
+        gap: 15px; /* Расстояние между логотипами (вертикальное) */
+    }
+
+    .header-container > .logo-link:first-child { /* :first-child выберет именно первый логотип */
+        padding-bottom: 15px; /* Отступ ПОД первым лого ДО линии (равен gap для симметрии) */
+        border-bottom: 2px solid #F34604; /* Толщина, стиль и ВАШ ЦВЕТ линии */
+        width: auto; /* Чтобы граница не растягивалась на всю ширину, а была под лого */
+        display: inline-block; /* Необходимо для корректной работы padding/border */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-logo { flex-direction: column; }
+    .footer-credits { text-align: center; }
+
+    .section-title span { display: inline; font-size: 1em;}
+
+    .search-icon {
+        right: 30px; /* Ближе к краю на узких экранах */
+    }
+}

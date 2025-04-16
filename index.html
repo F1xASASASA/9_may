@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бессмертный Полк | Челябинск</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/polk-icon.png" type="image/png">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="site-wrapper">
+     <header class="site-header">
+          <div class="container header-container">
+             <!-- Логотип МИДИС (слева) -->
+             <a href="index.html" class="logo-link">
+                 <img src="img/Group.svg" alt="Логотип МИДИС" class="logo">
+             </a>
+
+          
+             <a href="https://may9.ru/" class="logo-link">
+                  <img src="img/80_let.png" alt="Логотип Проекта" class="logo header-logo-right">
+             </a>
+             
+         </div>
+     </header>
+
+        <main>
+             <section class="hero-section">
+                <div class="hero-background"></div>
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <h1 class="hero-title animate-on-load fade-in-up">Бессмертный<br>полк</h1>
+                    <p class="hero-subtitle animate-on-load fade-in-up delay-1">МИДиС помнит своих героев</p>
+                </div>
+                 <a href="#intro" class="scroll-down-link animate-on-load fade-in-up delay-3" aria-label="Прокрутить вниз">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+            </section>
+
+            <section id="intro" class="intro-section container">
+                 <div class="intro-text-wrapper animate-on-scroll fade-in">
+                    <h2 class="section-subtitle">Память в каждом сердце</h2>
+                    <p>
+                        "Бессмертный полк" — это не просто акция, это живая река памяти, объединяющая миллионы людей по всему миру. Это личные истории наших дедов и прадедов, отстоявших мир в Великой Отечественной войне.
+                    </p>
+                    <p>
+                        На этом сайте мы собрали истории сотрудников и студентов МИДиС <br>об их родственниках, участвовавших в Великой Отечественной войне. <br> Помним. Знаем. Гордимся.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Heroes Section -->
+            <section class="monuments-section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll fade-in">
+                         <h2 class="section-subtitle"><span>Лица Победы</span></h2>
+                         <p class="section-description">Истории мужества, стойкости и&nbsp;любви к&nbsp;Родине тех, кто прошел Великую Отечественную войну.</p>
+                    </div>
+
+                    <!-- === ПОИСК ПО ИМЕНАМ === -->
+                    <div class="search-wrapper animate-on-scroll fade-in">
+                         <label for="hero-search" class="visually-hidden">Поиск по имени героя:</label>
+                         <input type="search" id="hero-search" name="hero-search" class="search-input" placeholder="Введите имя героя...">
+                         <!-- Иконка лупы -->
+                         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                             <circle cx="11" cy="11" r="8"></circle>
+                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                         </svg>
+                     </div>
+                    <!-- === КОНЕЦ ПОИСКА === -->
+
+                    <div class="monuments-grid" aria-live="polite">
+
+                        <!-- Карточки героев -->
+                        <!-- Атрибут data-category больше не нужен -->
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                            <a href="ivanov-ii.html" class="card-link">
+                                <div class="card-image-container"> <img src="img/ivan.jpg" alt="Иванов Иван Иванович" loading="lazy"> <div class="card-image-overlay"></div> </div>
+                                <div class="card-content"> <h3 class="card-title">Иванов Иван Иванович</h3> <span class="card-cta">Читать историю →</span> </div>
+                            </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                            <a href="sidorova-mp.html" class="card-link">
+                                <div class="card-image-container"> <img src="img/veterans/sidorova.jpg" alt="Сидорова Мария Петровна" loading="lazy"> <div class="card-image-overlay"></div> </div>
+                                <div class="card-content"> <h3 class="card-title">Сидорова Мария Петровна</h3> <span class="card-cta">Читать историю →</span> </div>
+                            </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="kuznetsov-as.html" class="card-link">
+                                <div class="card-image-container"> <img src="img/veterans/kuznetsov.jpg" alt="Кузнецов Алексей Степанович" loading="lazy"> <div class="card-image-overlay"></div> </div>
+                                <div class="card-content"> <h3 class="card-title">Кузнецов Алексей Степанович</h3> <span class="card-cta">Читать историю →</span> </div>
+                            </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link">
+                                <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div>
+                                <div class="card-content"> <h3 class="card-title">Петров Семен Васильевич</h3> <span class="card-cta">История скоро появится →</span> </div>
+                            </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link">
+                                <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div>
+                                <div class="card-content"> <h3 class="card-title">Васильева Ольга Ивановна</h3> <span class="card-cta">История скоро появится →</span> </div>
+                            </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link">
+                                <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div>
+                                <div class="card-content"> <h3 class="card-title">Смирнов Дмитрий Андреевич</h3> <span class="card-cta">История скоро появится →</span> </div>
+                            </a>
+                        </div>
+
+                        <!-- === ПЛЕЙСХОЛДЕРЫ (7 - 46) === -->
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 7</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 8</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 9</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 10</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 11</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 12</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 13</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 14</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 15</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 16</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 17</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 18</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 19</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 20</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 21</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 22</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 23</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 24</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 25</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 26</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 27</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 28</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 29</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 30</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 31</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 32</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 33</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 34</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 35</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 36</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 37</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 38</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 39</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 40</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 41</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                         <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 42</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 43</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 44</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 45</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                        <div class="monument-card animate-on-scroll fade-in-up stagger">
+                             <a href="#" class="card-link"> <div class="card-image-container placeholder-style"> <span class="placeholder-icon">👤</span> </div> <div class="card-content"> <h3 class="card-title">Герой N 46</h3> <span class="card-cta">История скоро появится →</span> </div> </a>
+                        </div>
+                       <!-- === Конец добавленных плейсхолдеров === -->
+
+                    </div> <!-- /monuments-grid -->
+
+                    <!-- Кнопка "Показать еще" -->
+                    <button id="show-more-btn" class="show-more-button" type="button">
+                        Показать еще
+                    </button>
+
+                </div> <!-- /container -->
+            </section>
+        </main>
+
+        <footer class="site-footer">
+             <div class="container footer-container">
+                <div class="footer-logo">
+                     <img src="img/Group.svg" alt="Логотип МИДИС" class="logo">
+                     <span>Международный Институт<br>Дизайна и Сервиса</span>
+                </div>
+                <div class="footer-credits">
+                    <p>Проект студентов группы П-18</p>
+                    <p>Руководитель: Хаятова Л. Р.</p>
+                    <p>© <span id="current-year"></span> Все права защищены</p>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- /site-wrapper -->
+</body>
+</html>
