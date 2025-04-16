@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Убраны фиксированные размеры, background-size: cover лучше для адаптивности */
     width: 100%;
     height: 100%;
-    background-image: url('img/123.png');
+    background-image: url('./img/123.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
